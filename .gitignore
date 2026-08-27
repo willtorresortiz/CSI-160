@@ -1,0 +1,3 @@
+# Local Python environment and generated cache files
+.venv
+__pycache__/
