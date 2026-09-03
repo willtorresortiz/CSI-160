@@ -1,3 +1,4 @@
+
 x = 2 # single line comment, the data type is an integer
 y= 1
 name = "John Doe" #Data type is string
@@ -26,9 +27,12 @@ zip = '05401'
 
 title = "There's a Lot to Learn with Python"
 z = x + y 
+year = '2026'
 
+print("The year is now "+year) #Not using the str() method
 #An example of concatenation
-print("The sum of x + y equals " + str(z))
+print("The sum of x + y equals " + str(z)) #Treats the integer in 'z' as a string value
+print("the sum of x + y equals",z)
 
 print('The Value of x equals',x)
 print('The Value of y equals',y)
@@ -42,3 +46,5 @@ age = int(age) #The int() method converts a string to an integer
 year = 2026
 birth_year = 2026 - age
 print("you were born in", birth_year)
+"""/
+"""
