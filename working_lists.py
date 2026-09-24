@@ -1,4 +1,4 @@
-num = [1, 2, 1, 3, 1, 4, 5, 6, 7, 8, 11, 34, 56, 78, 3, 7, 9]
+num = [1, 2, 1, 7, 3, 1, 4, 5, 6, 7, 7, 8, 11, 34, 56, 78, 3, 7, 9]
 
 #Loop through the list and locate the value in 'find'
 #Output its index position
@@ -12,7 +12,7 @@ def findValue():
         else:
             pass
     if (count > 0):
-        print(f'Item found, index position equals {idx}')
+        print('Item found, index position equals', idx)
     else:
         print('Item not found in list.')
 
@@ -22,8 +22,8 @@ def findValue():
 def findAllValues():
     find = int(input("What value are you searching for in the list?"))
     count = 0
-    for i in num:
-        if(i == find):
+    for k in num:
+        if(k == find):
             count = count + 1 #resetting variable value
             continue
         else:
@@ -57,14 +57,21 @@ def findIdxValues():
 
 # Function designed to identify a value and then remove it. Place
 # each instance of the value in a list named foundItem[]
-
 def removeItem():
     foundItem = []
     find = int(input("What value are you searching for in the list?"))
-    for j in num:
-        if(j == find):
-            x = num.remove(j)
-            print(num)
+    count = 0
+    for index,n in enumerate(num):
+        if(n == find):
+            count = count + 1 #resetting variable value
+            continue
         else:
-            pass
+            continue
+
+    for i in range(count): # Cycles back to the beginning of the list as many times as the value of count.
+        num.remove(find)
+        foundItem.append(find)
+    print(num)
+    print(foundItem)
+
 removeItem()
