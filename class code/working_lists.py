@@ -17,8 +17,6 @@ def findValue():
         print('Item not found in list.')
 
 # findValue()
-
-
 def findAllValues():
     find = int(input("What value are you searching for in the list?"))
     count = 0
