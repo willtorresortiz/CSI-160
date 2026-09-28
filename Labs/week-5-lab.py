@@ -6,7 +6,11 @@ def number_of_zeros(grades):
 
     return (int) - the number of 0% grades
     """
-    pass
+    count = 0
+    for n in grades:
+        if(n == 0):
+            count += 1
+    return count
 
 def median(numbers):
     """Find the median of the given list of numbers.
@@ -21,8 +25,16 @@ def median(numbers):
 
     return (numeric) The median value as either an int or float
     """
-    pass
+    sorted_numbers = sorted(numbers)
+    if (len(sorted_numbers) % 2 == 0):
+        median_index1 = int(len(sorted_numbers) / 2 - 1) # getting median number by getting even length, dividing by two for python 0 index start.
+        median_index2 = int(len(sorted_numbers) / 2)
+        median_number = (sorted_numbers[median_index1] + sorted_numbers[median_index2]) / 2
 
+    else:
+        median_index = int(len(sorted_numbers) / 2) # getting median number by getting odd length, dividing by two and - 1 for python 0 index start.
+        median_number = sorted_numbers[median_index]
+    return median_number
 
 def top_quartile(grades):
     """Return the top 25% of the grades in the supplied list of grades. Round up when determining how many grades to include in the top 25%.
@@ -34,7 +46,15 @@ def top_quartile(grades):
 
     return (list of floats) - The top 25%
     """
-    pass
+    sorted_grades = sorted(grades)
+    list_length = len(grades)
+    if list_length % 4 == 0:
+        quartile_amount = int(list_length / 4)
+    else:
+        quartile_amount = int(list_length / 4 + 1)
+    starting_index = list_length - quartile_amount
+
+    return sorted_grades[starting_index:]
 
 def domain_name_extractor(url):
     """Given a url, return the domain name
@@ -47,7 +67,18 @@ def domain_name_extractor(url):
 
     return (string) The domain name or IP address. Example: docs.python.org
     """
-    pass
+    protocol_location = url.find("://")
+    domain_start = protocol_location + 3
+
+    domain_end = url.find("/", domain_start)
+
+    if domain_end == -1:
+        domain_end = len(url)
+
+    domain_name = url[domain_start:domain_end]
+
+    return domain_name
+
 
 def test_number_of_zeros():
     print('Running number_of_zeros tests:')
