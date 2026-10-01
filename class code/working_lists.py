@@ -67,7 +67,6 @@ def removeItem():
             continue
         else:
             continue
-
     for i in range(count): # Cycles back to the beginning of the list as many times as the value of count.
         num.remove(find)
         foundItem.append(find)
