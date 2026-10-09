@@ -39,10 +39,16 @@ def binarySearch():
         mid = low + (high - low)//2
 
         if(numSorted[mid] < x):
-            print(numSorted[mid])
-            break
+            low = mid + 1
+        elif(numSorted[mid] > x):
+            high = mid - 1
         else:
-            print()
-            break
+            return mid
+    return -1
 
-binarySearch()
+result = binarySearch()
+
+if (result != -1):
+    print(f"Element is present at index position {result}")
+else:
+    print('Element not found in list')
